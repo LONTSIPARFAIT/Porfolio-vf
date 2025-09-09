@@ -1,4 +1,4 @@
-import Title from './Title'
+import Title from './Title' 
 import imgCSS from "../assets/techno/css.png";
 import imgJS from "../assets/techno/js.png";
 import imgREACT from "../assets/techno/react.png";
@@ -82,7 +82,22 @@ const Experience = () => {
           ))}
         </div>
 
-        <div className="md:ml-4" ></div>
+        <div className="md:ml-4 flex flex-col space-y-4">
+          {experiences.map((experience) => (
+            <div key={experience.id} className="flex justify-center items-center flex-col ">
+
+              <div className="w-24 h-24 p-2 rounded-full border-2 border-accent">
+                <img src={experience.image} 
+                  alt={experience.company} 
+                  className="w-full h-full object-cover rounded-full" />
+              <ul></ul>
+              </div>
+              <ul></ul>
+              <span className="text-sm mt-2">{experience.name}</span>
+
+            </div>
+          ))}
+        </div>
 
       </div>
     </div>
