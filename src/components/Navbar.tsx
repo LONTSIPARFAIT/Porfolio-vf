@@ -1,4 +1,4 @@
-import { Container } from "luciDe-react";
+import { Container } from "lucide-react";
 
 const NavBar = () => {
   return (
