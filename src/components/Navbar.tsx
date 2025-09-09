@@ -15,18 +15,18 @@ const NavBar = () => {
           </a>
         </li>
         <li>
-          <a href="#" className="hover:text-accent transition">
-            About
+          <a href="#" className="btn btn-md btn-ghost hover:text-accent transition">
+            A Propos
           </a>
         </li>
         <li>
-          <a href="#" className="hover:text-accent transition">
-            Services
+          <a href="#" className="btn btn-md btn-ghost hover:text-accent transition">
+            Mes Experiences
           </a>
         </li>
         <li>
-          <a href="#" className="hover:text-accent transition">
-            Contact
+          <a href="#" className="btn btn-md btn-ghost hover:text-accent transition">
+            Mes competences
           </a>
         </li>
       </ul>
