@@ -10,7 +10,7 @@ const NavBar = () => {
       </a>
       <ul className="hidden md:flex space-x-6 font-medium">
         <li>
-          <a href="#" className="hover:text-accent transition">
+          <a href="#" className="btn btn-md btn-ghost hover:text-accent transition">
             Acceuil
           </a>
         </li>
