@@ -8,6 +8,9 @@ import imgNODE from "../assets/techno/node-js.png";
 import imgTYPE from "../assets/techno/typescript.svg";
 import imgTAILWIND from "../assets/techno/tailwind.png";
 import imgPRISMA from "../assets/techno/prisma.webp";
+import google from "../assets/companies/google.png";
+import meta from "../assets/companies/meta.webp";
+import amazon from "../assets/companies/amazon.png";
 
 
 const skills = [
@@ -22,9 +25,6 @@ const skills = [
     { id: 9, name: "Prisma", image: imgPRISMA },
 ];
 
-import google from "../assets/companies/google.png";
-import meta from "../assets/companies/meta.webp";
-import amazon from "../assets/companies/amazon.png";
 
 const experiences = [
     {
