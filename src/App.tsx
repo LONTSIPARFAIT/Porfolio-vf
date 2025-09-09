@@ -6,7 +6,7 @@ export default function App() {
 
   return (
     <div>
-      <div className="p-5 lg:px-[15%] ">
+      <div className="p-5 md:px-[15%] ">
         <NavBar />
       </div>
       <Home />

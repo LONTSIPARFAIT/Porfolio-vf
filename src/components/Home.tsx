@@ -1,5 +1,5 @@
 import { Mail } from "luciDe-react";
-import img from "../assets/img2.jpg";
+import img from "../assets/img.jpg";
 
 const Home = () => {  
   return (
@@ -20,8 +20,8 @@ const Home = () => {
     
       </div>
 
-      <div className="d">
-        <img src="" alt="Lontsi Parfait" />
+      <div className="md:ml-60">
+        <img src={img} alt="Lontsi Parfait" className="w-96 h-96" />
       </div>
 
     </div>
