@@ -4,9 +4,9 @@ interface TitleProps {
 
 const Title = ({title} : TitleProps ) => {
   return (
-    <div>
-      
-    </div>
+    <h1>
+      {title}
+    </h1>
   )
 }
 
