@@ -21,7 +21,14 @@ const Home = () => {
       </div>
 
       <div className="md:ml-60">
-        <img src={img} alt="Lontsi Parfait" className="w-96 h-96" />
+        <img src={img} 
+        alt="Lontsi Parfait" 
+        className="w-96 h-96 object-cover border-8 border-accent shadow-xl" 
+        style={
+          {
+            borderRadius :  "30% 70% 70% 30% / 67% 62% 38% 33%"
+          }}/>
+
       </div>
 
     </div>
