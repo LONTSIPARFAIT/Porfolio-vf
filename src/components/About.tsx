@@ -1,6 +1,6 @@
 import Title from "./Title";
 import img from "../assets/img3.jpg";
-
+import { CalendarSync, LetterText, Paintbrush } from "lucide-react";
 
 const aboutSections = [
     {
