@@ -1,4 +1,7 @@
-import React from 'react'
+interface TitleProps {
+    
+}
+
 
 const Title = () => {
   return (
