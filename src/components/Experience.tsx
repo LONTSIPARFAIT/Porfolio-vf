@@ -22,6 +22,10 @@ const skills = [
     { id: 9, name: "Prisma", image: imgPRISMA },
 ];
 
+import google from "../assets/companies/google.png";
+import meta from "../assets/companies/meta.webp";
+import amazon from "../assets/companies/amazon.png";
+
 const experiences = [
     {
         id: 1,
