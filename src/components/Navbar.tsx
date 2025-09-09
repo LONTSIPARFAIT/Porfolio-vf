@@ -1,7 +1,7 @@
 const NavBar = () => {
   return (
     <>
-      test
+      <a href=""></a>
     </>
   )
 }
