@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { Mail } from "luciDe-react";
 import img from "../assets/img3.jpg";
 
 const Home = () => {  
