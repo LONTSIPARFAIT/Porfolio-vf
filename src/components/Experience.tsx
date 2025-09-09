@@ -1,4 +1,4 @@
-import Title from './Title' 
+import Title from './Title'
 import imgCSS from "../assets/techno/css.png";
 import imgJS from "../assets/techno/js.png";
 import imgREACT from "../assets/techno/react.png";
@@ -22,32 +22,64 @@ const skills = [
     { id: 9, name: "Prisma", image: imgPRISMA },
 ];
 
+const experiences = [
+    {
+        id: 1,
+        role: "Software Engineer",
+        company: "Google",
+        period: "Sep 2022 - Présent",
+        description: [
+            "Développement de nouvelles fonctionnalités pour Google Maps.",
+            "Optimisation des performances de l'application.",
+        ],
+        image: google,
+    },
+    {
+        id: 2,
+        role: "Fullstack Developer",
+        company: "Meta",
+        period: "Jan 2021 - Août 2022",
+        description: [
+            "Création d'une plateforme interne de collaboration pour les équipes.",
+            "Mise en place d'une architecture scalable et optimisée.",
+        ],
+        image: meta,
+    },
+    {
+        id: 3,
+        role: "Frontend Developer",
+        company: "Amazon",
+        period: "Mai 2019 - Déc 2020",
+        description: [
+            "Développement d'une interface utilisateur pour Amazon Web Services.",
+            "Implémentation des tests unitaires et E2E.",
+        ],
+        image: amazon,
+    },
+];
+
+
 const Experience = () => {
   return (
     <div>
       <Title title="Expériences" />
       <div className="" >
-        <div className="" >
+        <div className="flex flex-wrap gap-4 justify-center items-center md:w-1/3 mt-4 md:mt-0" >
           {skills.map((skill) => (
-            <div key={skill.id} className="flex flex-col md:flex-row items-center bg-base-100 p-5 rounded-xl md:w-96 shadow-xl">
+            <div key={skill.id} className="flex justify-center items-center flex-col ">
 
-              <div className="md:ml-4 text-center md:text-left">
+              <div className="w-24 h-24 p-2 rounded-full border-2 border-accent">
                 <img src={skill.image} 
-                  alt="Lontsi Parfait" 
-                  className="w-96 h-96 object-cover border-8 border-accent shadow-xl" 
-                  style={
-                    {
-                      borderRadius :  "30% 70% 70% 30% / 67% 62% 38% 33%"
-                }}/>
+                  alt={skill.name} 
+                  className="w-full h-full object-cover rounded-full" />
               </div>
               <span className="text-sm mt-2">{skill.name}</span>
-              <p className="text-sm"> {skill.description} </p>
 
             </div>
           ))}
         </div>
 
-        <div className="" ></div>
+        <div className="md:ml-4" ></div>
 
       </div>
     </div>
