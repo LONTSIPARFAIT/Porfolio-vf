@@ -11,7 +11,7 @@ const NavBar = () => {
       <ul className="hidden md:flex space-x-6 font-medium">
         <li>
           <a href="#" className="hover:text-accent transition">
-            Home
+            Acceuil
           </a>
         </li>
         <li>
@@ -28,7 +28,7 @@ const NavBar = () => {
           <a href="#" className="hover:text-accent transition">
             Contact
           </a>
-        </li> 
+        </li>
       </ul>
     </>
   );
