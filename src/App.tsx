@@ -10,7 +10,7 @@ export default function App() {
       <div className="p-5 md:px-[15%] ">
         <NavBar />
       </div>
-      <Home />
+        <Home />
       <About />
     </div>
   )
