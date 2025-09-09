@@ -2,7 +2,7 @@ import { Container } from "luciDe-react";
 
 const NavBar = () => {
   return (
-    <>
+    <div className="flex items-center font-bold text-3xl md:text-xl">
       <a href="#" className="flex items-center font-bold text-3xl md:text-xl">
         <Container className="mr-2"/>
         Perfecto
@@ -26,11 +26,11 @@ const NavBar = () => {
         </li>
         <li>
           <a href="#" className="btn btn-md btn-ghost hover:text-accent transition">
-            Mes competences
+            Mes Competences
           </a>
         </li>
       </ul>
-    </>
+    </div>
   );
 };
 
