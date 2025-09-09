@@ -5,9 +5,13 @@ const Home = () => {
         <h1 className="text-5xl md:text-6xl font-bold text-center md:text-left mt-4 md:mt-0">Bonjour , <br /> Je suis {" "}
           <span className="text-accent">PerfectoDev</span> 
         </h1>
-        <p className="text-lg text-center md:text-left mt-4 text-gray-600">
-          Développeur web et mobile passionné par la création d'applications innovantes et performantes.
+        <p className="my-4 text-md text-center md:text-left mt-4 text-gray-100">
+          Je suis un Développeur Fulfstack <br /> Passionné par la création d'applications innovantes et performantes.<br /> Contactez moi si vos avez besoin de mes services
         </p>
+
+        <a href="">
+          
+        </a>
     
       </div>
 
