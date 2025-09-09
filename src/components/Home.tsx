@@ -1,8 +1,12 @@
-const Home = () => {
+const Home = () => {  
   return (
-    <div className="d">
-      <div className="d"></div>
-      <div className="d"></div>
+    <div className="flex flex-col-reverse md:flex-row items-center justify-center md:my-32 my-10">
+      <div className="d">
+c
+      </div>
+
+      <div className="d">x</div>
+
     </div>
   );
 };
