@@ -8,6 +8,9 @@ const NavBar = () => {
         Perfecto
         <span className="text-accent">Dev</span>
       </a>
+      <ul className="">
+
+      </ul>
     </>
   );
 };
