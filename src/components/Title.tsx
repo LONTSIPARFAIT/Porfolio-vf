@@ -1,9 +1,8 @@
 interface TitleProps {
-    
+   title: string
 }
 
-
-const Title = () => {
+const Title = ({title} : TitleProps ) => {
   return (
     <div>
       
