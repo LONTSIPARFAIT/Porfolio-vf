@@ -1,5 +1,5 @@
 import { Mail } from "luciDe-react";
-import img from "../assets/img.jpg";
+import img from "../assets/img3.jpg";
 
 const Home = () => {  
   return (
