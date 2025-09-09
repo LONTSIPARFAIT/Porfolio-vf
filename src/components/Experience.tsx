@@ -25,7 +25,6 @@ const skills = [
     { id: 9, name: "Prisma", image: imgPRISMA },
 ];
 
-
 const experiences = [
     {
         id: 1,
