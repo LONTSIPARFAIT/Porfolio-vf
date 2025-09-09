@@ -25,7 +25,7 @@ const NavBar = () => {
           </a>
         </li>
         <li>
-          <a href="#project" className="btn btn-md btn-ghost hover:text-accent transition">
+          <a href="#Projects" className="btn btn-md btn-ghost hover:text-accent transition">
             Mes Competences
           </a>
         </li>
