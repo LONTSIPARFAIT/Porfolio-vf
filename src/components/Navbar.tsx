@@ -1,14 +1,15 @@
-import { Container } from "luciDe-react"
+import { Container } from "luciDe-react";
 
 const NavBar = () => {
   return (
     <>
-      <a href="#">
+      <a href="#" className="flex items-center font-bold text-lg">
         <Container />
-        Perfecto<span>Dev</span>
+        Perfecto
+        <span className="text-accent">Dev</span>
       </a>
     </>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;
