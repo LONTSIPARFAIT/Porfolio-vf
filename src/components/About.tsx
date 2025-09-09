@@ -1,9 +1,10 @@
+import Title from "./Title"
 
 
 const About = () => {
   return (
     <div>
-      about
+      <Title title="A Propos"/>
     </div>
   )
 }
