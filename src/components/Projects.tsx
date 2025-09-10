@@ -87,11 +87,12 @@ const Projects = () => {
                 <p className="text-sm"> {project.description} </p>
               </div>
 
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2 my-3">
                 {project.technologies.map((tech) => (
                   <span key={tech} className="badge badge-accent badge-sm"> {tech} </span>
                 ))}
               </div>
+              <div className=""></div>
             </div>
                           
           ))
