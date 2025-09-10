@@ -1,24 +1,24 @@
-import "./App.css";
-import About from "./components/About";
-import Experience from "./components/Experience";
-import Projects from "./components/Projects";
-import Home from "./components/Home";
-import NavBar from "./components/Navbar";
-import Footer from "./components/Footer";
+import './App.css';
+import About from './components/About';
+import Experience from './components/Experience';
+import Projects from './components/Projects';
+import Home from './components/Home';
+import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <div>
-      <div className="p-5 md:px-[15%] ">
-        <NavBar />
-        <Home />
-      </div>
-      <About />
-      <div className="p-5 md:px-[15%] ">
-        <Experience />
-        <Projects />
+    <div className="min-h-screen">
+      <NavBar />
+      <main className="pt-20">
+        <div className="p-5 md:px-[15%] max-w-7xl mx-auto">
+          <Home />
+          <About />
+          <Experience />
+          <Projects />
+        </div>
         <Footer />
-      </div>
+      </main>
     </div>
   );
 }

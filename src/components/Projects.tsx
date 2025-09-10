@@ -63,7 +63,7 @@ const Projects = () => {
   }, [isInView, controls]);
 
   return (
-    <div className="pt-20 pb-10" id="projects" ref={ref}>
+    <div className="pb-10" id="projects" ref={ref}>
       <motion.div
         variants={textVariants}
         initial="hidden"

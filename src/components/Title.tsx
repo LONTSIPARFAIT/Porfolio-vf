@@ -9,7 +9,7 @@ const Title = ({ title }: TitleProps) => {
   // Référence pour le titre
   const ref = useRef(null);
   // Détecter si le titre est dans la vue
-  const isInView = useInView(ref, { once: false, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: '-200px' }); // Marge plus large pour détection
   // Contrôler les animations
   const controls = useAnimation();
 
@@ -22,11 +22,11 @@ const Title = ({ title }: TitleProps) => {
   // Variantes pour l'animation du trait
   const underlineVariants = {
     animate: {
-      scaleX: [1, 1.2, 1], // Pulsation subtile
-      opacity: [0.7, 1, 0.7],
+      scaleX: [1, 1.1, 1], // Pulsation plus subtile
+      opacity: [0.8, 1, 0.8],
       transition: {
         repeat: Infinity,
-        duration: 2,
+        duration: 2.5, // Légèrement plus lente pour subtilité
         ease: 'easeInOut',
       },
     },
@@ -36,20 +36,23 @@ const Title = ({ title }: TitleProps) => {
   useEffect(() => {
     if (isInView) {
       controls.start('visible');
-    } else {
-      controls.start('hidden');
     }
   }, [isInView, controls]);
+
+  // Forcer l'animation visible au chargement si déjà dans la vue
+  useEffect(() => {
+    controls.start('visible');
+  }, [controls]);
 
   return (
     <motion.div
       ref={ref}
-      className="relative uppercase font-bold text-center text-2xl sm:text-4xl text-accent mb-8"
+      className="relative uppercase font-bold text-center text-2xl sm:text-4xl text-accent mb-8 z-10"
       variants={textVariants}
       initial="hidden"
       animate={controls}
       transition={{ duration: 0.8, ease: 'easeOut' }}
-      whileHover={{ scale: 1.05, color: '#facc15' }} // Changement de couleur au survol
+      whileHover={{ scale: 1.05, color: '#EEDFC3FF' }}
     >
       {title}
       <motion.span

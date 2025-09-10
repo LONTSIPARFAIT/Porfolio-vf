@@ -51,11 +51,11 @@ const About = () => {
       controls.start('visible');
     } else {
       controls.start('hidden');
-    }
+    }-
   }, [isInView, controls]);
 
   return (
-    <div className="bg-base-300 p-10 mb-10 md:mb-32 pt-20" id="about" ref={ref}>
+    <div className="bg-base-300 p-10 mb-10 md:mb-32" id="about" ref={ref}>
       <motion.div
         variants={textVariants}
         initial="hidden"

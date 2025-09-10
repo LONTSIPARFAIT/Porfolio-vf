@@ -86,7 +86,7 @@ const Experience = () => {
   }, [isInView, controls]);
 
   return (
-    <div id="experience" className="pt-20 pb-10" ref={ref}>
+    <div id="experience" className="pb-10" ref={ref}>
       <motion.div
         variants={textVariants}
         initial="hidden"
