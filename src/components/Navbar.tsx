@@ -57,7 +57,7 @@ const NavBar = () => {
             whileTap={{ scale: 0.95 }}
           >
             <a href="#about" className="btn btn-md btn-ghost transition">
-              À Propos
+              À Proposds
             </a>
           </motion.li>
           <motion.li
