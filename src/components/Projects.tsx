@@ -92,7 +92,9 @@ const Projects = () => {
                   <span key={tech} className="badge badge-accent badge-sm"> {tech} </span>
                 ))}
               </div>
-              <div className=""></div>
+              <div className="flex justify-between">
+                
+              </div>
             </div>
                           
           ))
