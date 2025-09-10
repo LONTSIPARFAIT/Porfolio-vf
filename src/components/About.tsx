@@ -51,7 +51,7 @@ const About = () => {
       controls.start('visible');
     } else {
       controls.start('hidden');
-    }-
+    }
   }, [isInView, controls]);
 
   return (
