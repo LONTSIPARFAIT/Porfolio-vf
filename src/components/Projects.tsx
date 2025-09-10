@@ -75,6 +75,30 @@ const Projects = () => {
   return (
     <div className="mt-10" id="Projects">
       <Title title="Mes Projets" />
+
+      <div className="grid md:grid-cols-3 gap-4">
+        {
+          projects.map((project) => (
+            <div key={project.id} className="bg-base-300 p-5 h-fit rounded-xl shadow-lg ">
+              <img src={project.image} alt={project.title} className="w-full rounded-xl h-56 object-cover" />
+
+              <div className="my-2 font-bold">
+                <h1 className=""> {project.title} </h1>
+                <p className="text-sm"> {project.description} </p>
+              </div>
+
+              <div className="flex gap-2">
+                {project.technologies.map((tech) => (
+                  <span key={tech} className="badge badge-accent badge-sm"> {tech} </span>
+                ))}
+              </div>
+            </div>
+                          
+          ))
+
+        }
+      </div>
+
       {/* <div className="grid md:grid-cols-3 gap-4">
         {projects.map((project) => (
           <div
