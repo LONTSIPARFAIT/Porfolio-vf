@@ -73,7 +73,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="mt-10" id="Projects">
+    <div className="mt-10" id="projects">
       <Title title="Mes Projets" />
 
       <div className="grid md:grid-cols-3 gap-4">
