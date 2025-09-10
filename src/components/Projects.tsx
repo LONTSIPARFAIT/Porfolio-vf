@@ -1,149 +1,128 @@
-import Title from "./Title";
-
-import img1 from "../assets/projects/1.png";
-import img2 from "../assets/projects/2.png";
-import img3 from "../assets/projects/3.png";
-import img4 from "../assets/projects/4.png";
-import img5 from "../assets/projects/5.png";
-import img6 from "../assets/projects/6.png";
-import {  Github, Video } from "lucide-react";
+import { motion, useInView, useAnimation } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+import Title from './Title';
+import img1 from '../assets/projects/1.png';
+import img2 from '../assets/projects/2.png';
+import img3 from '../assets/projects/3.png';
+import { Github, Video } from 'lucide-react';
 
 const projects = [
   {
     id: 1,
-    title: "Gestionnaire de tâches",
+    title: 'Plateforme d’E-learning',
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae magni deserunt debitis recusandae ab harum totam, eum facilis et ratione officia ut inventore aspernatur",
-    technologies: ["React", "Node.js", "Tailwind CSS"],
-    demoLink: "#demoLink",
-    repoLink: "#repoLink",
+      'Une plateforme web permettant aux utilisateurs d’accéder à des cours en ligne, avec gestion des utilisateurs, des cours et des quiz. Développée dans le cadre d’un projet académique pour faciliter l’apprentissage à distance.',
+    technologies: ['Laravel', 'HTML', 'CSS', 'JavaScript'],
+    demoLink: '#demoLink', // Remplacez par un lien réel si disponible
+    repoLink: '#repoLink', // Remplacez par un lien GitHub si disponible
     image: img1,
   },
   {
     id: 2,
-    title: "Plateforme E-commerce",
+    title: 'Application CRUD',
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae magni deserunt debitis recusandae ab harum totam, eum facilis et ratione officia ut inventore aspernatur",
-    technologies: ["Next.js", "TypeScript", "Prisma"],
-    demoLink: "#demoLink",
-    repoLink: "#repoLink",
+      'Une application de gestion de données permettant de créer, lire, mettre à jour et supprimer des enregistrements. Développée en C# pour démontrer les compétences en gestion de bases de données.',
+    technologies: ['C#', '.NET', 'SQL'],
+    demoLink: '#demoLink', // Remplacez par un lien réel si disponible
+    repoLink: '#repoLink', // Remplacez par un lien GitHub si disponible
     image: img2,
   },
   {
     id: 3,
-    title: "Portfolio interactif",
+    title: 'Portfolio Interactif',
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae magni deserunt debitis recusandae ab harum totam, eum facilis et ratione officia ut inventore aspernatur",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    demoLink: "#demoLink",
-    repoLink: "#repoLink",
+      'Un portfolio personnel mettant en avant mes compétences en développement web avec une interface moderne et interactive. Construit pour présenter mes projets et mon expertise technique.',
+    technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
+    demoLink: '#demoLink', // Remplacez par un lien réel si disponible
+    repoLink: '#repoLink', // Remplacez par un lien GitHub si disponible
     image: img3,
-  },
-  {
-    id: 4,
-    title: "Application de Chat en temps réel",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae magni deserunt debitis recusandae ab harum totam, eum facilis et ratione officia ut inventore aspernatur",
-    technologies: ["React", "Socket.io", "Express.js"],
-    demoLink: "#demoLink",
-    repoLink: "#repoLink",
-    image: img4,
-  },
-  {
-    id: 5,
-    title: "Système de réservation de salles",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae magni deserunt debitis recusandae ab harum totam, eum facilis et ratione officia ut inventore aspernatur",
-    technologies: ["Next.js", "MongoDB", "Chakra UI"],
-    demoLink: "#demoLink",
-    repoLink: "#repoLink",
-    image: img5,
-  },
-  {
-    id: 6,
-    title: "Analyseur de sentiment",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae magni deserunt debitis recusandae ab harum totam, eum facilis et ratione officia ut inventore aspernatur",
-    technologies: ["Python", "Flask", "NLTK"],
-    demoLink: "#demoLink",
-    repoLink: "#repoLink",
-    image: img6,
   },
 ];
 
 const Projects = () => {
+  // Référence pour la section #projects
+  const ref = useRef(null);
+  // Détecter si la section est dans la vue
+  const isInView = useInView(ref, { once: false, margin: '-100px' });
+  // Contrôler les animations
+  const controls = useAnimation();
+
+  // Variantes pour le titre et les cartes
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  // Relancer les animations quand la section entre dans la vue
+  useEffect(() => {
+    if (isInView) {
+      controls.start('visible');
+    } else {
+      controls.start('hidden');
+    }
+  }, [isInView, controls]);
+
   return (
-    <div className="mt-10" id="projects">
-      <Title title="Mes Projets" />
+    <div className="pt-20 pb-10" id="projects" ref={ref}>
+      <motion.div
+        variants={textVariants}
+        initial="hidden"
+        animate={controls}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      >
+        <Title title="Mes Projets" />
+      </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-4">
-        {
-          projects.map((project) => (
-            <div key={project.id} className="bg-base-300 p-5 h-fit rounded-xl shadow-lg ">
-              <img src={project.image} alt={project.title} className="w-full rounded-xl h-56 object-cover" />
-
-              <div className="my-2 font-bold">
-                <h1 className=""> {project.title} </h1>
-                <p className="text-sm"> {project.description} </p>
-              </div>
-
-              <div className="flex flex-wrap gap-2 my-3">
-                {project.technologies.map((tech) => (
-                  <span key={tech} className="badge badge-accent badge-sm"> {tech} </span>
-                ))}
-              </div>
-              <div className="flex">
-                
-                  <a className="btn btn-accent w-2/3" href={project.demoLink} target="_blank" rel="noreferrer">
-                    Demo
-                    <Video className="w-4"/>
-                  </a>
-                  <a className="btn btn-neutral w-1/3 ml-2" href={project.repoLink} target="_blank" rel="noreferrer">
-                    
-                    <Github className="w-4"/>
-                  </a>
-
-              </div>
-            </div>
-                          
-          ))
-
-        }
-      </div>
-
-      {/* <div className="grid md:grid-cols-3 gap-4">
-        {projects.map((project) => (
-          <div
+      <div className="grid md:grid-cols-3 gap-4 max-w-7xl mx-auto">
+        {projects.map((project, index) => (
+          <motion.div
             key={project.id}
-            className="bg-base-300 p-5 h-fit rounded-xl shadow-lg "
+            className="bg-base-300 p-5 h-fit rounded-xl shadow-lg"
+            variants={textVariants}
+            initial="hidden"
+            animate={controls}
+            transition={{ duration: 0.8, delay: 0.2 + index * 0.2, ease: 'easeOut' }}
+            whileHover={{ scale: 1.05, boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.2)' }}
+            whileTap={{ scale: 0.95 }}
           >
             <img
               src={project.image}
               alt={project.title}
               className="w-full rounded-xl h-56 object-cover"
             />
-            <div>
-              <h1 className="my-2 font-bold">{project.title}</h1>
-              <p className="text-sm">{project.description}</p>
+            <div className="my-2 font-bold">
+              <h1 className="text-xl">{project.title}</h1>
+              <p className="text-sm text-gray-100">{project.description}</p>
             </div>
             <div className="flex flex-wrap gap-2 my-3">
               {project.technologies.map((tech) => (
-                <span className="badge badge-accent badge-sm">{tech}</span>
+                <span key={tech} className="badge badge-accent badge-sm">
+                  {tech}
+                </span>
               ))}
             </div>
             <div className="flex">
-              <a className="btn btn-accent w-2/3" href={project.demoLink}>
+              <a
+                className="btn btn-accent w-2/3"
+                href={project.demoLink}
+                target="_blank"
+                rel="noreferrer"
+              >
                 Demo
                 <Video className="w-4" />
               </a>
-
-              <a className="btn btn-neutral w-1/3 ml-2" href={project.repoLink}>
+              <a
+                className="btn btn-neutral w-1/3 ml-2"
+                href={project.repoLink}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Github className="w-4" />
               </a>
             </div>
-          </div> */}
-      {/* ))}
-      </div> */}
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
 };
