@@ -5,11 +5,11 @@ import imgCSS from '../assets/techno/css.png';
 import imgJS from '../assets/techno/js.png';
 import imgREACT from '../assets/techno/react.png';
 import imgHTML from '../assets/techno/html.png';
-import imgNEXT from '../assets/techno/next-js.webp';
+import imgLara from '../assets/techno/lara.png';
 import imgNODE from '../assets/techno/node-js.png';
 import imgTYPE from '../assets/techno/typescript.svg';
 import imgTAILWIND from '../assets/techno/tailwind.png';
-import imgPRISMA from '../assets/techno/prisma.webp';
+import imgPhp from '../assets/techno/php.png';
 import google from '../assets/companies/google.png';
 import meta from '../assets/companies/meta.webp';
 import amazon from '../assets/companies/amazon.png';
@@ -22,8 +22,8 @@ const skills = [
   { id: 5, name: 'Node.js', image: imgNODE },
   { id: 6, name: 'Tailwind CSS', image: imgTAILWIND },
   { id: 7, name: 'TypeScript', image: imgTYPE },
-  { id: 8, name: 'Next.js', image: imgNEXT },
-  { id: 9, name: 'Prisma', image: imgPRISMA },
+  { id: 8, name: 'Laravel', image: imgLara },
+  { id: 9, name: 'PHP', image: imgPhp },
 ];
 
 const experiences = [
