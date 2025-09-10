@@ -76,7 +76,7 @@ const Home = () => {
         >
           Développeur Fullstack passionné par la création d'applications web modernes, performantes et centrées sur l'utilisateur. <br />
           J'aime transformer des idées en solutions numériques innovantes. <br />
-          Prêt à donner vie à votre projet ? Contactez-moi !
+          Prêt à donner vie à votre projet ?
         </motion.p>
         <motion.a
           href="mailto:lontsi12@gmail.com"
