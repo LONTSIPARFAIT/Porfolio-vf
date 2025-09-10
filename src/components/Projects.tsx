@@ -75,7 +75,7 @@ const Projects = () => {
   return (
     <div className="mt-10" id="Projects">
       <Title title="Mes Projets" />
-      <div className="grid md:grid-cols-3 gap-4">
+      {/* <div className="grid md:grid-cols-3 gap-4">
         {projects.map((project) => (
           <div
             key={project.id}
@@ -105,9 +105,9 @@ const Projects = () => {
                 <Github className="w-4" />
               </a>
             </div>
-          </div>
-        ))}
-      </div>
+          </div> */}
+      {/* ))}
+      </div> */}
     </div>
   );
 };
