@@ -29,36 +29,42 @@ const skills = [
 const experiences = [
   {
     id: 1,
-    role: 'Software Engineer',
-    company: 'Google',
-    period: 'Sep 2022 - Présent',
+    role: 'Développeur Fullstack (Stage)',
+    company: 'CFPC',
+    period: 'Juin 2024 - Août 2024',
     description: [
-      'Développement de nouvelles fonctionnalités pour Google Maps.',
-      'Optimisation des performances de l’application.',
+      'Développement d’une plateforme d’e-learning en Laravel pour gérer les cours et les utilisateurs.',
+      'Mise en place d’un tableau de bord admin avec des statistiques dynamiques et une interface responsive.',
+      'Intégration de fonctionnalités CRUD pour la gestion des utilisateurs et des cours.',
     ],
-    image: google,
+    image: google, 
+    // image: '/assets/google.png', // Placeholder, remplacez par un logo réel si disponible
   },
   {
     id: 2,
-    role: 'Fullstack Developer',
-    company: 'Meta',
-    period: 'Jan 2021 - Août 2022',
+    role: 'Développeur Web Freelance',
+    company: 'Projets Personnels',
+    period: 'Jan 2024 - Présent',
     description: [
-      'Création d’une plateforme interne de collaboration pour les équipes.',
-      'Mise en place d’une architecture scalable et optimisée.',
+      'Création d’un portfolio interactif avec React, Tailwind CSS et Framer Motion.',
+      'Ajout d’animations 3D en arrière-plan avec React Three Fiber pour une expérience immersive.',
+      'Optimisation de l’interface utilisateur pour le mode sombre et la responsivité mobile.',
     ],
     image: meta,
+    // image: '/assets/freelance-logo.png', // Placeholder
   },
   {
     id: 3,
-    role: 'Frontend Developer',
-    company: 'Amazon',
-    period: 'Mai 2019 - Déc 2020',
+    role: 'Développeur Mobile',
+    company: 'Projet Académique (ESCa)',
+    period: 'Sep 2023 - Mai 2024',
     description: [
-      'Développement d’une interface utilisateur pour Amazon Web Services.',
-      'Implémentation des tests unitaires et E2E.',
+      'Développement d’une application CRUD en C# pour la gestion de données locales.',
+      'Exploration de Flutter et Dart pour créer des prototypes d’applications mobiles multiplateformes.',
+      'Collaboration avec une équipe pour concevoir une interface utilisateur moderne et intuitive.',
     ],
     image: amazon,
+    // image: '/assets/esca-logo.png', // Placeholder
   },
 ];
 
