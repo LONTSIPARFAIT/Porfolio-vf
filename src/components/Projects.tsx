@@ -93,7 +93,7 @@ const Projects = () => {
                 ))}
               </div>
               <div className="flex justify-between">
-                  <a href={project.demoLink} target="_blank" rel="noreferrer" className="btn btn-accent">
+                  <a className="btn btn-accent" href={project.demoLink} target="_blank" rel="noreferrer">
                     Demo
                   </a>
               </div>
