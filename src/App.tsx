@@ -4,6 +4,7 @@ import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Home from "./components/Home";
 import NavBar from "./components/Navbar";
+import NavBar from "./components/Footer";
 
 export default function App() {
   return (
@@ -16,7 +17,7 @@ export default function App() {
       <div className="p-5 md:px-[15%] ">
         <Experience />
         <Projects />
-        <Projects />
+        <Footer />
       </div>
     </div>
   );
