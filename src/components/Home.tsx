@@ -12,21 +12,21 @@ const Home = () => {
   const controls = useAnimation();
 
   // Variantes pour l'animation continue de l'image
-  const imageVariants = {
-    float: {
-      y: [-10, 10], // Mouvement vertical de -10px à +10px
-      transition: {
-        y: {
-          repeat: Infinity,
-          repeatType: 'reverse',
-          duration: 2,
-          ease: 'easeInOut',
-        },
+ const imageVariants = {
+  float: {
+    y: [-10, 10],
+    transition: {
+      y: {
+        repeat: Infinity,
+        repeatType: 'reverse' as const, // Typage explicite pour RepeatType
+        duration: 2,
+        ease: 'easeInOut' as const, // Typage explicite pour Easing
       },
     },
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1 },
-  };
+  },
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1 },
+};
 
   // Variantes pour les autres éléments
   const textVariants = {
