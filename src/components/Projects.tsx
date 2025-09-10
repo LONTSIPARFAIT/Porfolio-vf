@@ -15,8 +15,8 @@ const projects = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae magni deserunt debitis recusandae ab harum totam, eum facilis et ratione officia ut inventore aspernatur",
     technologies: ["React", "Node.js", "Tailwind CSS"],
-    demoLink: "#",
-    repoLink: "#",
+    demoLink: "#demoLink",
+    repoLink: "#repoLink",
     image: img1,
   },
   {
@@ -25,8 +25,8 @@ const projects = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae magni deserunt debitis recusandae ab harum totam, eum facilis et ratione officia ut inventore aspernatur",
     technologies: ["Next.js", "TypeScript", "Prisma"],
-    demoLink: "#",
-    repoLink: "#",
+    demoLink: "#demoLink",
+    repoLink: "#repoLink",
     image: img2,
   },
   {
@@ -35,8 +35,8 @@ const projects = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae magni deserunt debitis recusandae ab harum totam, eum facilis et ratione officia ut inventore aspernatur",
     technologies: ["HTML", "CSS", "JavaScript"],
-    demoLink: "#",
-    repoLink: "#",
+    demoLink: "#demoLink",
+    repoLink: "#repoLink",
     image: img3,
   },
   {
@@ -45,8 +45,8 @@ const projects = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae magni deserunt debitis recusandae ab harum totam, eum facilis et ratione officia ut inventore aspernatur",
     technologies: ["React", "Socket.io", "Express.js"],
-    demoLink: "#",
-    repoLink: "#",
+    demoLink: "#demoLink",
+    repoLink: "#repoLink",
     image: img4,
   },
   {
@@ -55,8 +55,8 @@ const projects = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae magni deserunt debitis recusandae ab harum totam, eum facilis et ratione officia ut inventore aspernatur",
     technologies: ["Next.js", "MongoDB", "Chakra UI"],
-    demoLink: "#",
-    repoLink: "#",
+    demoLink: "#demoLink",
+    repoLink: "#repoLink",
     image: img5,
   },
   {
@@ -65,8 +65,8 @@ const projects = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae magni deserunt debitis recusandae ab harum totam, eum facilis et ratione officia ut inventore aspernatur",
     technologies: ["Python", "Flask", "NLTK"],
-    demoLink: "#",
-    repoLink: "#",
+    demoLink: "#demoLink",
+    repoLink: "#repoLink",
     image: img6,
   },
 ];
@@ -98,7 +98,7 @@ const Projects = () => {
                     Demo
                     <Video className="w-4"/>
                   </a>
-                  <a className="btn btn-accent" href={project.demoLink} target="_blank" rel="noreferrer">
+                  <a className="btn btn-accent" href={project.repoLink} target="_blank" rel="noreferrer">
                     
                     <Github className="w-4"/>
                   </a>
