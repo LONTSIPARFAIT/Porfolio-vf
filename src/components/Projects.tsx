@@ -6,7 +6,7 @@ import img3 from "../assets/projects/3.png";
 import img4 from "../assets/projects/4.png";
 import img5 from "../assets/projects/5.png";
 import img6 from "../assets/projects/6.png";
-import { Github, Video } from "lucide-react";
+import {  Github, Video } from "lucide-react";
 
 const projects = [
   {
@@ -99,8 +99,8 @@ const Projects = () => {
                     <Video className="w-4"/>
                   </a>
                   <a className="btn btn-accent" href={project.demoLink} target="_blank" rel="noreferrer">
-                    Demo
-                    <Video className="w-4"/>
+                    
+                    <Github className="w-4"/>
                   </a>
 
               </div>
