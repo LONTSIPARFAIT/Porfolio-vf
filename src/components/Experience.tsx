@@ -10,9 +10,9 @@ import imgNODE from '../assets/techno/node-js.png';
 import imgTYPE from '../assets/techno/typescript.svg';
 import imgTAILWIND from '../assets/techno/tailwind.png';
 import imgPhp from '../assets/techno/php.png';
-import google from '../assets/companies/google.png';
-import meta from '../assets/companies/meta.webp';
-import amazon from '../assets/companies/amazon.png';
+import google from '../assets/companies/full.jpeg';
+import full from '../assets/companies/meta.webp';
+import free from '../assets/companies/free.png';
 
 const skills = [
   { id: 1, name: 'HTML', image: imgHTML },
@@ -50,7 +50,7 @@ const experiences = [
       'Ajout d’animations 3D en arrière-plan avec React Three Fiber pour une expérience immersive.',
       'Optimisation de l’interface utilisateur pour le mode sombre et la responsivité mobile.',
     ],
-    image: meta,
+    image: full,
     // image: '/assets/freelance-logo.png', // Placeholder
   },
   {
@@ -63,7 +63,7 @@ const experiences = [
       'Exploration de Flutter et Dart pour créer des prototypes d’applications mobiles multiplateformes.',
       'Collaboration avec une équipe pour concevoir une interface utilisateur moderne et intuitive.',
     ],
-    image: amazon,
+    image: free,
     // image: '/assets/esca-logo.png', // Placeholder
   },
 ];
