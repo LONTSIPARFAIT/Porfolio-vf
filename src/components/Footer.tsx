@@ -1,4 +1,5 @@
-iconst Footer = () => {
+
+const Footer = () => {
   return (
     <div>
       
