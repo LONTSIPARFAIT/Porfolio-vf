@@ -91,7 +91,7 @@ const Footer = () => {
               aria-label="Twitter"
             >
               <Twitter className="w-5 h-5 text-current" />
-            </motion,a>
+            </motion.a>
             <motion.a
               href="https://youtube.com/[votreprofil]" // Remplacez par votre profil YouTube
               target="_blank"
