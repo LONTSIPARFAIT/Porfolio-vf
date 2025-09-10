@@ -92,9 +92,10 @@ const Projects = () => {
                   <span key={tech} className="badge badge-accent badge-sm"> {tech} </span>
                 ))}
               </div>
-              <div className="flex justify-between">
+              <div className="flex">
                   <a className="btn btn-accent" href={project.demoLink} target="_blank" rel="noreferrer">
                     Demo
+                    <Video className="w-4"/>
                   </a>
               </div>
             </div>
