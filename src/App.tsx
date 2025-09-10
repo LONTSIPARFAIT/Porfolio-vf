@@ -16,6 +16,7 @@ export default function App() {
       <div className="p-5 md:px-[15%] ">
         <Experience />
         <Projects />
+        <Projects />
       </div>
     </div>
   );
