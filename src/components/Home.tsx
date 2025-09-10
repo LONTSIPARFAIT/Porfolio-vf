@@ -7,7 +7,7 @@ const Home = () => {
 
       <div className="flex flex-col">
         <h1 className="text-5xl md:text-6xl font-bold text-center md:text-left mt-4 md:mt-0">Bonjour , <br /> Je suis {" "}
-          <span className="text-accent">PerfectoDev</span> 
+          <span className="text-accent">Lontsi Parfait</span> 
         </h1>
         <p className="my-4 text-md text-center md:text-left mt-4 text-gray-100">
           Je suis un Développeur Fulfstack <br /> Passionné par la création d'applications innovantes et performantes.<br /> Contactez moi si vous avez besoin de mes services
