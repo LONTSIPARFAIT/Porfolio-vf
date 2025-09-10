@@ -4,7 +4,7 @@ import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Home from "./components/Home";
 import NavBar from "./components/Navbar";
-import NavBar from "./components/Footer";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
