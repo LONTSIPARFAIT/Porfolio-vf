@@ -11,7 +11,7 @@ export default function App() {
     <div className="min-h-screen">
       <NavBar />
       <main className="pt-20">
-        <div className="p-5  max-w-7xl mx-auto">
+        <div className="p-5 max-w-7xl mx-auto">
           <Home />
           <About />
           <Experience />
