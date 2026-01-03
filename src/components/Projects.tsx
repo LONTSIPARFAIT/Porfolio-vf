@@ -14,17 +14,17 @@ const projects = [
       'Une plateforme web permettant aux utilisateurs d’accéder à des cours en ligne, avec gestion des utilisateurs, des cours et des quiz. Développée dans le cadre d’un projet académique pour faciliter l’apprentissage à distance.',
     technologies: ['Laravel', 'HTML', 'CSS', 'JavaScript'],
     demoLink: '#demoLink', // Remplacez par un lien réel si disponible
-    repoLink: '#repoLink', // Remplacez par un lien GitHub si disponible
+    repoLink: 'https://github.com/LONTSIPARFAIT/eleaning-projet', // Remplacez par un lien GitHub si disponible
     image: img1,
   },
   {
     id: 2,
-    title: 'Application CRUD',
+    title: 'Doctor Site',
     description:
-      'Une application de gestion de données permettant de créer, lire, mettre à jour et supprimer des enregistrements. Développée en C# pour démontrer les compétences en gestion de bases de données.',
+      'Une application de gestion de données permettant de consulter des medecin en ligne. Développée en javascript pour démontrer les compétences en gestion de bases de données.',
     technologies: ['C#', '.NET', 'SQL'],
     demoLink: '#demoLink', // Remplacez par un lien réel si disponible
-    repoLink: '#repoLink', // Remplacez par un lien GitHub si disponible
+    repoLink: 'https://github.com/LONTSIPARFAIT/Doctor-Site', // Remplacez par un lien GitHub si disponible
     image: img2,
   },
   {
