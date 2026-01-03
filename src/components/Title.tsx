@@ -19,15 +19,15 @@ const Title = ({ title }: TitleProps) => {
     visible: { opacity: 1, y: 0 },
   };
 
-  // Variantes pour l'animation du trait
-  const underlineVariants = {
+ const underlineVariants = {
+    hidden: { scaleX: 0, opacity: 0 },
     animate: {
-      scaleX: [1, 1.1, 1], // Pulsation plus subtile
+      scaleX: [1, 1.1, 1],
       opacity: [0.8, 1, 0.8],
       transition: {
         repeat: Infinity,
-        duration: 2.5, // Légèrement plus lente pour subtilité
-        ease: 'easeInOut',
+        duration: 2.5,
+        ease: 'easeInOut' as const, // Typage explicite pour Easing
       },
     },
   };
