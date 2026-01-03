@@ -14,7 +14,7 @@ const Home = () => {
   // Variantes pour l'animation continue de l'image
   const imageVariants = {
     float: {
-      y: [-10, 10], // Mouvement vertical de -10px à +10px
+      y: [-10, 10],
       transition: {
         y: {
           repeat: Infinity,
@@ -41,11 +41,7 @@ const Home = () => {
 
   // Relancer les animations quand la section entre dans la vue
   useEffect(() => {
-    if (isInView) {
-      controls.start('visible');
-    } else {
-      controls.start('hidden');
-    }
+    controls.start(isInView ? 'visible' : 'hidden');
   }, [isInView, controls]);
 
   return (
@@ -89,6 +85,7 @@ const Home = () => {
           <Mail className="w-5 h-5" />
           Contactez-moi
         </motion.a>
+
         <motion.nav
           className="mt-6"
           variants={textVariants}
