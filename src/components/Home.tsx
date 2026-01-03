@@ -1,4 +1,4 @@
-import { motion, useInView, useAnimation } from 'framer-motion';
+import { motion, useInView, useAnimation, type Variants } from 'framer-motion';
 import { Mail, Twitter, Youtube, Facebook } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import img from '../assets/img3.jpg';
@@ -12,21 +12,20 @@ const Home = () => {
   const controls = useAnimation();
 
   // Variantes pour l'animation continue de l'image
-  const imageVariants = {
-    float: {
-      y: [-10, 10],
-      transition: {
-        y: {
-          repeat: Infinity,
-          repeatType: 'reverse',
-          duration: 2,
-          ease: 'easeInOut',
-        },
-      },
+const imageVariants: Variants = {
+  float: {
+    y: [-10, 10],
+    transition: {
+      duration: 2,
+      ease: 'easeInOut',
+      repeat: Infinity,
+      repeatType: 'reverse' as const, // Ajoutez 'as const' pour forcer le type
     },
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1 },
-  };
+  },
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1 },
+};
+
 
   // Variantes pour les autres éléments
   const textVariants = {
