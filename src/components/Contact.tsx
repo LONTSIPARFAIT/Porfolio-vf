@@ -41,8 +41,8 @@ const Contact = () => {
     {
       icon: <MapPin className="w-6 h-6" />,
       title: 'Localisation',
-      value: 'Yaoundé, Cameroun',
-      link: 'https://maps.google.com/?q=Yaounde,Cameroun'
+      value: 'Bafoussam, Cameroun',
+      link: 'https://maps.google.com/?q=Bafoussam,Cameroun'
     }
   ];
 
