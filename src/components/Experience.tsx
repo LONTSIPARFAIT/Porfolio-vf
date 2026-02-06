@@ -1,166 +1,154 @@
-import { motion, useInView, useAnimation } from 'framer-motion';
-import { useEffect, useRef } from 'react';
-import Title from './Title';
-import imgCSS from '../assets/techno/css.png';
-import imgJS from '../assets/techno/js.png';
-import imgREACT from '../assets/techno/react.png';
-import imgHTML from '../assets/techno/html.png';
-import imgLara from '../assets/techno/lara.png';
-import imgNODE from '../assets/techno/node-js.png';
-import imgTYPE from '../assets/techno/typescript.svg';
-import imgTAILWIND from '../assets/techno/tailwind.png';
-import imgPhp from '../assets/techno/php.png';
-import google from '../assets/companies/full.jpeg';
-import full from '../assets/companies/meta.webp';
-import free from '../assets/companies/free.png';
-
-const skills = [
-  { id: 1, name: 'HTML', image: imgHTML },
-  { id: 2, name: 'CSS', image: imgCSS },
-  { id: 3, name: 'JavaScript', image: imgJS },
-  { id: 4, name: 'React', image: imgREACT },
-  { id: 5, name: 'Node.js', image: imgNODE },
-  { id: 6, name: 'Tailwind CSS', image: imgTAILWIND },
-  { id: 7, name: 'TypeScript', image: imgTYPE },
-  { id: 8, name: 'Laravel', image: imgLara },
-  { id: 9, name: 'PHP', image: imgPhp },
-];
-
-const experiences = [
-  {
-    id: 1,
-    role: 'Développeur Fullstack (Stage)',
-    company: 'CFPC',
-    period: 'Juin 2024 - Août 2024',
-    description: [
-      'Développement d’une plateforme d’e-learning en Laravel pour gérer les cours et les utilisateurs.',
-      'Mise en place d’un tableau de bord admin avec des statistiques dynamiques et une interface responsive.',
-      'Intégration de fonctionnalités CRUD pour la gestion des utilisateurs et des cours.',
-    ],
-    image: google, 
-    // image: '/assets/google.png', // Placeholder, remplacez par un logo réel si disponible
-  },
-  {
-    id: 2,
-    role: 'Développeur Web Freelance',
-    company: 'Projets Personnels',
-    period: 'Jan 2024 - Présent',
-    description: [
-      'Création d’un portfolio interactif avec React, Tailwind CSS et Framer Motion.',
-      'Ajout d’animations 3D en arrière-plan avec React Three Fiber pour une expérience immersive.',
-      'Optimisation de l’interface utilisateur pour le mode sombre et la responsivité mobile.',
-    ],
-    image: full,
-    // image: '/assets/freelance-logo.png', // Placeholder
-  },
-  {
-    id: 3,
-    role: 'Développeur Mobile',
-    company: 'Projet Académique (ESCa)',
-    period: 'Sep 2023 - Mai 2024',
-    description: [
-      'Développement d’une application CRUD en C# pour la gestion de données locales.',
-      'Exploration de Flutter et Dart pour créer des prototypes d’applications mobiles multiplateformes.',
-      'Collaboration avec une équipe pour concevoir une interface utilisateur moderne et intuitive.',
-    ],
-    image: free,
-    // image: '/assets/esca-logo.png', // Placeholder
-  },
-];
+import { motion } from 'framer-motion';
+import { Briefcase, Calendar, MapPin, ArrowRight } from 'lucide-react';
 
 const Experience = () => {
-  // Référence pour la section #experience
-  const ref = useRef(null);
-  // Détecter si la section est dans la vue
-  const isInView = useInView(ref, { once: false, margin: '-100px' });
-  // Contrôler les animations
-  const controls = useAnimation();
-
-  // Variantes pour le titre, les compétences et les expériences
-  const textVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
-
-  // Relancer les animations quand la section entre dans la vue
-  useEffect(() => {
-    if (isInView) {
-      controls.start('visible');
-    } else {
-      controls.start('hidden');
+  const experiences = [
+    {
+      id: 1,
+      role: 'Développeur Fullstack (Stage)',
+      company: 'CFPC',
+      location: 'Yaoundé, Cameroun',
+      period: 'Juin 2024 - Août 2024',
+      description: [
+        'Développement d\'une plateforme d\'e-learning complète avec Laravel',
+        'Création d\'API RESTful pour la gestion des utilisateurs et des cours',
+        'Implémentation d\'un système d\'authentification sécurisé',
+        'Optimisation des performances et du SEO de l\'application'
+      ],
+      technologies: ['Laravel', 'MySQL', 'JavaScript', 'Tailwind CSS'],
+      color: 'border-l-blue-500'
+    },
+    {
+      id: 2,
+      role: 'Développeur Web Freelance',
+      company: 'Indépendant',
+      location: 'Remote',
+      period: 'Jan 2024 - Présent',
+      description: [
+        'Développement de sites web et applications sur mesure pour divers clients',
+        'Création de portfolios interactifs avec animations avancées',
+        'Optimisation de performances et scores Lighthouse',
+        'Intégration de systèmes de paiement et API tierces'
+      ],
+      technologies: ['React', 'Next.js', 'TypeScript', 'Node.js'],
+      color: 'border-l-purple-500'
+    },
+    {
+      id: 3,
+      role: 'Développeur Mobile',
+      company: 'Projet Académique (ESCa)',
+      location: 'Yaoundé, Cameroun',
+      period: 'Sep 2023 - Mai 2024',
+      description: [
+        'Développement d\'une application CRUD en C# pour la gestion de données',
+        'Recherche et prototypage d\'applications avec Flutter',
+        'Collaboration en équipe avec méthodologie Agile',
+        'Présentation du projet devant un jury professionnel'
+      ],
+      technologies: ['C#', '.NET', 'Flutter', 'SQL Server'],
+      color: 'border-l-green-500'
     }
-  }, [isInView, controls]);
+  ];
 
   return (
-    <div id="experience" className="pb-10" ref={ref}>
-      <motion.div
-        variants={textVariants}
-        initial="hidden"
-        animate={controls}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-      >
-        <Title title="Expériences" />
-      </motion.div>
-      <div className="flex flex-col-reverse md:flex-row justify-center items-center">
-        <div className="flex flex-wrap gap-4 justify-center items-center md:w-1/3 mt-4 md:mt-0">
-          {skills.map((skill, index) => (
-            <motion.div
-              key={skill.id}
-              className="flex justify-center items-center flex-col"
-              variants={textVariants}
-              initial="hidden"
-              animate={controls}
-              transition={{ duration: 0.8, delay: 0.2 + index * 0.1, ease: 'easeOut' }}
-              whileHover={{ scale: 1.1, boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.2)' }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <div className="w-24 h-24 p-2 rounded-full border-2 border-accent">
-                <img
-                  src={skill.image}
-                  alt={skill.name}
-                  className="w-full h-full object-cover rounded-full"
-                />
-              </div>
-              <span className="text-sm mt-2">{skill.name}</span>
-            </motion.div>
-          ))}
-        </div>
+    <section id="experience" className="py-20">
+      <div className="text-center mb-16">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-4xl font-bold mb-4"
+        >
+          Mon <span className="text-accent">Parcours</span>
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+        >
+          Expériences professionnelles et académiques qui ont façonné mon expertise
+        </motion.p>
+      </div>
 
-        <div className="md:ml-8 flex flex-col space-y-4">
-          {experiences.map((experience, index) => (
-            <motion.div
-              key={experience.id}
-              className="flex flex-col bg-base-200 p-5 rounded-xl shadow-lg"
-              variants={textVariants}
-              initial="hidden"
-              animate={controls}
-              transition={{ duration: 0.8, delay: 0.4 + index * 0.2, ease: 'easeOut' }}
-              whileHover={{ scale: 1.05, boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.2)' }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <div className="flex items-center">
-                <img
-                  src={experience.image}
-                  alt={experience.company}
-                  className="object-cover h-10 w-10"
-                />
-                <div className="ml-4">
-                  <h1 className="text-xl text-accent font-bold">
-                    {experience.role}, {experience.company}
-                  </h1>
-                  <span className="text-sm">{experience.period}</span>
+      <div className="relative">
+        {/* Timeline verticale */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-300 dark:bg-gray-700 hidden md:block" />
+
+        {experiences.map((exp, index) => (
+          <motion.div
+            key={exp.id}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.2 }}
+            className={`relative mb-12 ${index % 2 === 0 ? 'md:pr-1/2 md:pl-4' : 'md:pl-1/2 md:pr-4'}`}
+          >
+            {/* Point sur la timeline */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-white dark:border-gray-900 z-10 hidden md:block" />
+
+            {/* Carte d'expérience */}
+            <div className={`bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 border-l-4 ${exp.color} relative`}>
+              <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                <div>
+                  <div className="flex items-center space-x-2 mb-2">
+                    <Briefcase className="w-5 h-5 text-accent" />
+                    <h3 className="text-2xl font-bold">{exp.role}</h3>
+                  </div>
+                  <div className="flex items-center space-x-4 text-gray-600 dark:text-gray-300">
+                    <div className="flex items-center space-x-1">
+                      <Calendar className="w-4 h-4" />
+                      <span>{exp.period}</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <MapPin className="w-4 h-4" />
+                      <span>{exp.location}</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-4 md:mt-0">
+                  <span className="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-full font-semibold">
+                    {exp.company}
+                  </span>
                 </div>
               </div>
-              <ul className="list-disc ml-16 mt-2">
-                {experience.description.map((desc, index) => (
-                  <li key={index} className="text-gray-100">{desc}</li>
+
+              <ul className="space-y-2 mb-6">
+                {exp.description.map((item, i) => (
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="flex items-start"
+                  >
+                    <ArrowRight className="w-4 h-4 text-accent mr-2 mt-1 flex-shrink-0" />
+                    <span>{item}</span>
+                  </motion.li>
                 ))}
               </ul>
-            </motion.div>
-          ))}
-        </div>
+
+              <div className="flex flex-wrap gap-2">
+                {exp.technologies.map((tech, i) => (
+                  <motion.span
+                    key={i}
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm"
+                  >
+                    {tech}
+                  </motion.span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        ))}
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,128 +1,169 @@
-import { motion, useInView, useAnimation } from 'framer-motion';
-import { useEffect, useRef } from 'react';
-import { Container, Facebook, Twitter, Youtube, Linkedin, Github, Instagram } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Heart, Coffee, ArrowUp } from 'lucide-react';
+import { SiLinkedin, SiGithub, SiInstagram } from 'react-icons/si';
 
 const Footer = () => {
-  // Référence pour le footer
-  const ref = useRef(null);
-  // Détecter si le footer est dans la vue
-  const isInView = useInView(ref, { once: false, margin: '-100px' });
-  // Contrôler les animations
-  const controls = useAnimation();
+  const currentYear = new Date().getFullYear();
 
-  // Variantes pour les éléments
-  const textVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
+  const socialLinks = [
+    { icon: <SiGithub />, href: 'https://github.com/ton-username', label: 'GitHub' },
+    { icon: <SiLinkedin />, href: 'https://linkedin.com/in/lontsi-parfait', label: 'LinkedIn' },
+    // { icon: <SiTwitter />, href: 'https://twitter.com/ton-username', label: 'Twitter' },
+    { icon: <SiInstagram />, href: 'https://instagram.com/ton-username', label: 'Instagram' },
+  ];
 
-  // Relancer les animations quand le footer entre dans la vue
-  useEffect(() => {
-    if (isInView) {
-      controls.start('visible');
-    } else {
-      controls.start('hidden');
-    }
-  }, [isInView, controls]);
+  const quickLinks = [
+    { label: 'Accueil', href: '#home' },
+    { label: 'À Propos', href: '#about' },
+    { label: 'Compétences', href: '#skills' },
+    { label: 'Projets', href: '#projects' },
+    { label: 'Contact', href: '#contact' },
+  ];
 
   return (
-    <motion.footer
-      ref={ref}
-      className="footer footer-center py-8 bg-base-300 shadow-md"
-      variants={textVariants}
-      initial="hidden"
-      animate={controls}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
-    >
-      <div className="max-w-7xl mx-auto flex flex-col items-center">
-        <motion.aside
-          variants={textVariants}
-          transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-          className="flex flex-col items-center"
-        >
-          <Container className="w-8 h-8 text-accent" />
-          <p className="font-bold text-lg">
-            Perfecto
-            <span className="text-accent">Dev</span>
-          </p>
-        </motion.aside>
-        <motion.nav
-          variants={textVariants}
-          transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
-          className="mt-4"
-        >
-          <div className="grid grid-flow-col gap-2">
-            <motion.a
-              href="https://linkedin.com/in/[votreprofil]" // Remplacez par votre profil LinkedIn
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2, rotate: 10 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label="LinkedIn"
+    <footer className="bg-gray-900 text-white pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid md:grid-cols-4 gap-12 mb-12">
+          {/* Brand */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="space-y-4"
+          >
+            <h2 className="text-2xl font-bold">
+              Perfecto<span className="text-accent">Dev</span>
+            </h2>
+            <p className="text-gray-400">
+              Créateur d&apos;expériences web exceptionnelles et de solutions digitales innovantes.
+            </p>
+            <div className="flex space-x-4">
+              {socialLinks.map((link, index) => (
+                <motion.a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.2, y: -5 }}
+                  className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-accent transition-colors text-xl"
+                  aria-label={link.label}
+                >
+                  {link.icon}
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Liens rapides */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
+            <h3 className="text-lg font-bold mb-6">Navigation</h3>
+            <ul className="space-y-3">
+              {quickLinks.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="text-gray-400 hover:text-accent transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Services */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <h3 className="text-lg font-bold mb-6">Services</h3>
+            <ul className="space-y-3">
+              {[
+                'Développement Web',
+                'Applications Mobile',
+                'UI/UX Design',
+                'Consulting Tech',
+                'Maintenance & Support'
+              ].map((service) => (
+                <li key={service} className="text-gray-400">
+                  {service}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Newsletter */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <h3 className="text-lg font-bold mb-6">Restez informé</h3>
+            <p className="text-gray-400 mb-4">
+              Recevez les dernières mises à jour et projets.
+            </p>
+            <form className="space-y-3">
+              <input
+                type="email"
+                placeholder="Votre email"
+                className="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:border-accent outline-none"
+              />
+              <button
+                type="submit"
+                className="w-full btn btn-accent btn-sm"
+              >
+                S&apos;abonner
+              </button>
+            </form>
+          </motion.div>
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-gray-800 my-8" />
+
+        {/* Copyright */}
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-gray-400 mb-4 md:mb-0"
+          >
+            © {currentYear} Lontsi Parfait. Tous droits réservés.
+          </motion.p>
+          
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="flex items-center space-x-4"
+          >
+            <span className="text-gray-400 flex items-center">
+              Fait avec <Heart className="w-4 h-4 mx-1 text-red-500" /> et <Coffee className="w-4 h-4 mx-1 text-yellow-500" />
+            </span>
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="flex items-center space-x-1 text-gray-400 hover:text-accent transition-colors"
             >
-              <Linkedin className="w-5 h-5 text-current" />
-            </motion.a>
-            <motion.a
-              href="https://github.com/[votreprofil]" // Remplacez par votre profil GitHub
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2, rotate: 10 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label="GitHub"
-            >
-              <Github className="w-5 h-5 text-current" />
-            </motion.a>
-            <motion.a
-              href="https://instagram.com/[votreprofil]" // Remplacez par votre profil Instagram
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2, rotate: 10 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label="Instagram"
-            >
-              <Instagram className="w-5 h-5 text-current" />
-            </motion.a>
-            <motion.a
-              href="https://twitter.com/[votreprofil]" // Remplacez par votre profil Twitter
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2, rotate: 10 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label="Twitter"
-            >
-              <Twitter className="w-5 h-5 text-current" />
-            </motion.a>
-            <motion.a
-              href="https://youtube.com/[votreprofil]" // Remplacez par votre profil YouTube
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2, rotate: 10 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label="YouTube"
-            >
-              <Youtube className="w-5 h-5 text-current" />
-            </motion.a>
-            <motion.a
-              href="https://facebook.com/[votreprofil]" // Remplacez par votre profil Facebook
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2, rotate: 10 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label="Facebook"
-            >
-              <Facebook className="w-5 h-5 text-current" />
-            </motion.a>
-          </div>
-        </motion.nav>
-        <motion.p
-          variants={textVariants}
-          transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
-          className="mt-4 text-sm text-gray-100"
-        >
-          Copyright © {new Date().getFullYear()} - All rights reserved
-        </motion.p>
+              <ArrowUp className="w-4 h-4" />
+              <span>Haut de page</span>
+            </button>
+          </motion.div>
+        </div>
       </div>
-    </motion.footer>
+    </footer>
   );
 };
 
