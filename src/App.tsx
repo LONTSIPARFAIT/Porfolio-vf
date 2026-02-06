@@ -54,19 +54,11 @@ export default function App() {
               />
             ))}
           </div>
-=======
-    <div className="min-h-screen">
-      <NavBar />
-      <main className="pt-20">
-        <div className="p-5 max-w-7xl mx-auto">
-          <Home />
-          <About />
-          <Experience />
-          <Projects />
->>>>>>> origin/main
-arkMode={setDarkMode} />
+        </div>
+
+        <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
         <main className="pt-20">
-          <div className="px-5 md:px-[2%] lg:px-[5%] max-w-7xl mx-auto">
+          <div className="px-5 md:px-[10%] lg:px-[15%] max-w-7xl mx-auto">
             <Home />
             <About />
             <Skills />

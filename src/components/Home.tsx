@@ -32,7 +32,6 @@ const Home = () => {
           transition={{ duration: 0.8 }}
           className="space-y-6"
         >
-        >
           <div className="space-y-2">
             <h2 className="text-lg text-accent font-semibold">{t('hello')}</h2>
             <h1 className="text-5xl md:text-6xl font-bold">
@@ -57,17 +56,6 @@ const Home = () => {
           </p>
 
           <div className="flex flex-wrap gap-4">
-          <Mail className="w-5 h-5" />
-          Contactez-moi
-        </motion.a>
-
-        <motion.nav
-          className="mt-6"
-          variants={textVariants}
-          transition={{ duration: 0.8, delay: 0.8, ease: 'easeOut' }}
-        >
-          <div className="grid grid-flow-col gap-4">
->>>>>>> origin/main
             <motion.a
               href="#contact"
               className="btn btn-accent px-8 group"
