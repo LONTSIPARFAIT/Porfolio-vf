@@ -36,7 +36,6 @@ export default function App() {
   }
 
   return (
-    <div className={`min-h-screen tran<<<<<<< HEAD
     <div className={`min-h-screen transition-all duration-300 ${darkMode ? 'dark bg-gray-900' : 'bg-gray-50'}`}>
       <div className="relative">
         {/* Particules d'arrière-plan avec effet parallax */}
