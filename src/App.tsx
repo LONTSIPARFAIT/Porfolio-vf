@@ -36,6 +36,7 @@ export default function App() {
   }
 
   return (
+    <div className={`min-h-screen tran<<<<<<< HEAD
     <div className={`min-h-screen transition-all duration-300 ${darkMode ? 'dark bg-gray-900' : 'bg-gray-50'}`}>
       <div className="relative">
         {/* Particules d'arrière-plan avec effet parallax */}
@@ -54,9 +55,17 @@ export default function App() {
               />
             ))}
           </div>
-        </div>
-
-        <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
+=======
+    <div className="min-h-screen">
+      <NavBar />
+      <main className="pt-20">
+        <div className="p-5 max-w-7xl mx-auto">
+          <Home />
+          <About />
+          <Experience />
+          <Projects />
+>>>>>>> origin/main
+arkMode={setDarkMode} />
         <main className="pt-20">
           <div className="px-5 md:px-[2%] lg:px-[5%] max-w-7xl mx-auto">
             <Home />

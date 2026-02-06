@@ -8,84 +8,61 @@ import img3 from '../assets/projects/3.png';
 const Projects = () => {
   const [filter, setFilter] = useState('all');
 
-  const projects = [
-    {
-      id: 1,
-      title: 'Plateforme d\'E-learning',
-      description: 'Solution complète d\'apprentissage en ligne avec gestion des cours, utilisateurs et évaluations.',
-      image: img1,
-      tags: ['Laravel', 'MySQL', 'JavaScript', 'Bootstrap'],
-      demoLink: '#',
-      repoLink: '#',
-      category: 'fullstack',
-      featured: true
-    },
-    {
-      id: 2,
-      title: 'Application CRUD Avancée',
-      description: 'Système de gestion de données avec interface moderne et fonctionnalités avancées.',
-      image: img2,
-      tags: ['C#', '.NET', 'SQL Server', 'WPF'],
-      demoLink: '#',
-      repoLink: '#',
-      category: 'desktop',
-      featured: false
-    },
-    {
-      id: 3,
-      title: 'Portfolio Interactif',
-      description: 'Portfolio moderne avec animations 3D, mode sombre/clair et design responsive.',
-      image: img3,
-      tags: ['React', 'TypeScript', 'Tailwind', 'Framer Motion'],
-      demoLink: '#',
-      repoLink: '#',
-      category: 'frontend',
-      featured: true
-    },
-    {
-      id: 4,
-      title: 'API RESTful',
-      description: 'API robuste pour application web avec authentification JWT et documentation Swagger.',
-      tags: ['Node.js', 'Express', 'MongoDB', 'JWT'],
-      demoLink: '#',
-      repoLink: '#',
-      category: 'backend',
-      featured: false
-    },
-    {
-      id: 5,
-      title: 'Dashboard Analytics',
-      description: 'Tableau de bord interactif pour visualisation de données en temps réel.',
-      tags: ['React', 'Chart.js', 'Firebase', 'Material-UI'],
-      demoLink: '#',
-      repoLink: '#',
-      category: 'frontend',
-      featured: false
-    },
-    {
-      id: 6,
-      title: 'Application Mobile',
-      description: 'Application cross-platform pour gestion de tâches avec notifications push.',
-      tags: ['Flutter', 'Firebase', 'BLoC', 'SQLite'],
-      demoLink: '#',
-      repoLink: '#',
-      category: 'mobile',
-      featured: false
+const projects = [
+  {
+    id: 1,
+    title: 'Plateforme d’E-learning',
+    description:
+      'Une plateforme web permettant aux utilisateurs d’accéder à des cours en ligne, avec gestion des utilisateurs, des cours et des quiz. Développée dans le cadre d’un projet académique pour faciliter l’apprentissage à distance.',
+    technologies: ['Laravel', 'HTML', 'CSS', 'JavaScript'],
+    demoLink: '#demoLink', // Remplacez par un lien réel si disponible
+    repoLink: '#repoLink', // Remplacez par un lien GitHub si disponible
+    image: img1,
+  },
+  {
+    id: 2,
+    title: 'Application CRUD',
+    description:
+      'Une application de gestion de données permettant de créer, lire, mettre à jour et supprimer des enregistrements. Développée en C# pour démontrer les compétences en gestion de bases de données.',
+    technologies: ['C#', '.NET', 'SQL'],
+    demoLink: '#demoLink', // Remplacez par un lien réel si disponible
+    repoLink: '#repoLink', // Remplacez par un lien GitHub si disponible
+    image: img2,
+  },
+  {
+    id: 3,
+    title: 'Portfolio Interactif',
+    description:
+      'Un portfolio personnel mettant en avant mes compétences en développement web avec une interface moderne et interactive. Construit pour présenter mes projets et mon expertise technique.',
+    technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
+    demoLink: '#demoLink', // Remplacez par un lien réel si disponible
+    repoLink: '#repoLink', // Remplacez par un lien GitHub si disponible
+    image: img3,
+  },
+];
+
+const Projects = () => {
+  // Référence pour la section #projects
+  const ref = useRef(null);
+  // Détecter si la section est dans la vue
+  const isInView = useInView(ref, { once: false, margin: '-100px' });
+  // Contrôler les animations
+  const controls = useAnimation();
+
+  // Variantes pour le titre et les cartes
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  // Relancer les animations quand la section entre dans la vue
+  useEffect(() => {
+    if (isInView) {
+      controls.start('visible');
+    } else {
+      controls.start('hidden');
     }
-  ];
-
-  const filteredProjects = filter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === filter);
-
-  const categories = [
-    { id: 'all', label: 'Tous' },
-    { id: 'frontend', label: 'Frontend' },
-    { id: 'backend', label: 'Backend' },
-    { id: 'fullstack', label: 'Fullstack' },
-    { id: 'mobile', label: 'Mobile' },
-    { id: 'desktop', label: 'Desktop' }
-  ];
+  }, [isInView, controls]);
 
   return (
     <section id="projects" className="py-20">
