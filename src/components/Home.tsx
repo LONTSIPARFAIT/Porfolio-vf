@@ -134,7 +134,7 @@ const Home = () => {
               }}
             />
 
-            {/* Imag */}
+            {/* Image */}
             <motion.img
               src={img}
               alt="Lontsi Parfait"
