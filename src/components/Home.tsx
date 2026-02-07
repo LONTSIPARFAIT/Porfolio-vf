@@ -14,7 +14,7 @@ const Home = () => {
       setTextIndex((prev) => (prev + 1) % roles.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, );
 
   const socialLinks = [
     { icon: <Github />, href: 'https://github.com/ton-username', label: 'GitHub' },
