@@ -13,7 +13,7 @@ const Home = () => {
     const interval = setInterval(() => {
       setTextIndex((prev) => (prev + 1) % roles.length);
     }, 3000);
-    return () => clearInterval(interval);
+    return () => clearInterval(interva);
   }, []);
 
   const socialLinks = [
