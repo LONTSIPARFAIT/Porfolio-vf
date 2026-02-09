@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Heart, Coffee, ArrowUp } from 'lucide-react';
-import { SiLinkedin, SiGithub, SiInstagram } from 'react-icons/si';
+import { SiLinkedin, SiInstagram } from 'react-icons/si';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
