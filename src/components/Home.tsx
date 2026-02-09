@@ -17,7 +17,7 @@ const Home = () => {
   }, []);
 
   const socialLinks = [
-    { icon: <Github />, href: 'https://github.com/ton-username', label: 'GitHub' },
+    { icon: <Github />, href: 'https://github.com/LONTSIPARFAIT', label: 'GitHub' },
     { icon: <Linkedin />, href: 'https://linkedin.com/in/lontsi-parfait', label: 'LinkedIn' },
     { icon: <Twitter />, href: 'https://twitter.com/ton-username', label: 'Twitter' },
   ];
