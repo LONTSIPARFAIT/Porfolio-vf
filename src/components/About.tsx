@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import { Code2, Palette, Smartphone, Server, Users, Rocket } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const About = () => {
+  const { t } = useLanguage();
   const skills = [
     { icon: <Code2 />, title: 'Frontend', description: 'React, TypeScript, Tailwind CSS', color: 'from-blue-500 to-cyan-500' },
     { icon: <Server />, title: 'Backend', description: 'Node.js, Laravel, PostgreSQL', color: 'from-purple-500 to-pink-500' },
@@ -20,7 +22,7 @@ const About = () => {
           viewport={{ once: true }}
           className="text-4xl font-bold mb-4"
         >
-          À <span className="text-accent">Propos</span> de Moi
+          {t('aboutTitle')}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -29,7 +31,7 @@ const About = () => {
           transition={{ delay: 0.2 }}
           className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
         >
-          Passionné par la technologie depuis toujours, je transforme des idées en solutions digitales performantes et élégantes.
+          {t('aboutDescription')}
         </motion.p>
       </div>
 
@@ -40,17 +42,16 @@ const About = () => {
           viewport={{ once: true }}
           className="space-y-6"
         >
-          <h3 className="text-3xl font-bold">Ma Philosophie</h3>
+          <h3 className="text-3xl font-bold">{t('philosophyTitle')}</h3>
           <p className="text-gray-600 dark:text-gray-300">
-            Je crois que le code n'est pas juste une série d'instructions, mais une forme d'art qui doit être à la fois 
-            fonctionnelle et esthétique. Chaque projet est une opportunité d'apprendre, d'innover et d'impacter.
+            {t('philosophyText')}
           </p>
           <div className="space-y-4">
             {[
-              'Focus sur l\'expérience utilisateur',
-              'Code propre et maintenable',
-              'Performance optimale',
-              'Collaboration efficace'
+              t('focusUX'),
+              t('cleanCode'),
+              t('optimalPerformance'),
+              t('effectiveCollaboration')
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -76,10 +77,10 @@ const About = () => {
           <div className="bg-gradient-to-br from-accent/20 to-transparent rounded-3xl p-8">
             <div className="grid grid-cols-2 gap-6">
               {[
-                { value: '50+', label: 'Projets réalisés' },
-                { value: '100%', label: 'Satisfaction client' },
-                { value: '24/7', label: 'Disponibilité' },
-                { value: '∞', label: 'Passion' },
+                { value: '50+', label: t('projectsCompleted') },
+                { value: '100%', label: t('clientSatisfaction') },
+                { value: '24/7', label: t('availability') },
+                { value: '∞', label: t('passion') },
               ].map((stat, index) => (
                 <motion.div
                   key={index}

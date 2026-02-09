@@ -4,11 +4,13 @@ import {
   SiNodedotjs, SiLaravel, SiMongodb, SiPostgresql,
   SiGit, SiDocker, SiFigma, SiAdobexd 
 } from 'react-icons/si';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Skills = () => {
+  const { t } = useLanguage();
   const skillCategories = [
     {
-      category: 'Frontend',
+      category: t('frontend'),
       skills: [
         { name: 'React', icon: <SiReact />, color: '#61DAFB' },
         { name: 'TypeScript', icon: <SiTypescript />, color: '#3178C6' },
@@ -17,7 +19,7 @@ const Skills = () => {
       ]
     },
     {
-      category: 'Backend',
+      category: t('backend'),
       skills: [
         { name: 'Node.js', icon: <SiNodedotjs />, color: '#339933' },
         { name: 'Laravel', icon: <SiLaravel />, color: '#FF2D20' },
@@ -26,7 +28,7 @@ const Skills = () => {
       ]
     },
     {
-      category: 'Outils & DevOps',
+      category: t('toolsDevops'),
       skills: [
         { name: 'Git', icon: <SiGit />, color: '#F05032' },
         { name: 'Docker', icon: <SiDocker />, color: '#2496ED' },
@@ -45,7 +47,7 @@ const Skills = () => {
           viewport={{ once: true }}
           className="text-4xl font-bold mb-4"
         >
-          Mes <span className="text-accent">Compétences</span>
+          {t('skillsTitle')}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -54,7 +56,7 @@ const Skills = () => {
           transition={{ delay: 0.2 }}
           className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
         >
-          Technologies et outils que j'utilise pour donner vie à vos projets
+          {t('skillsDescription')}
         </motion.p>
       </div>
 
@@ -99,7 +101,7 @@ const Skills = () => {
         viewport={{ once: true }}
         className="mt-20"
       >
-        <h3 className="text-2xl font-bold text-center mb-8">Compétences Complémentaires</h3>
+        <h3 className="text-2xl font-bold text-center mb-8">{t('additionalSkills')}</h3>
         <div className="flex flex-wrap justify-center gap-3">
           {['Agile/Scrum', 'SEO', 'Responsive Design', 'REST APIs', 'GraphQL', 
             'Testing', 'CI/CD', 'AWS Basics', 'UI/UX Principles', 'Performance Optimization'].map((skill, index) => (

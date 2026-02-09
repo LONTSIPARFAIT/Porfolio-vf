@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import { Briefcase, Calendar, MapPin, ArrowRight } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Experience = () => {
+  const { t } = useLanguage();
   const experiences = [
     {
       id: 1,
@@ -59,7 +61,7 @@ const Experience = () => {
           viewport={{ once: true }}
           className="text-4xl font-bold mb-4"
         >
-          Mon <span className="text-accent">Parcours</span>
+          {t('experienceTitle')}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -68,7 +70,7 @@ const Experience = () => {
           transition={{ delay: 0.2 }}
           className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
         >
-          Expériences professionnelles et académiques qui ont façonné mon expertise
+          {t('experienceDescription')}
         </motion.p>
       </div>
 

@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
 import { useState } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Contact = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -28,19 +30,19 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
-      title: 'Email',
+      title: t('email'),
       value: 'lontsiparfait12@gmail.com',
-      link: 'mailto:lontsiparfait12@gmail.comm'
+      link: 'mailto:lontsiparfait12@gmail.com'
     },
     {
       icon: <Phone className="w-6 h-6" />,
-      title: 'Téléphone',
+      title: t('phone'),
       value: '+237 679324517', // Remplace par ton numéro
       link: 'tel:+237679324517'
     },
     {
       icon: <MapPin className="w-6 h-6" />,
-      title: 'Localisation',
+      title: t('location'),
       value: 'Bafoussam, Cameroun',
       link: 'https://maps.google.com/?q=Bafoussam,Cameroun'
     }
@@ -55,7 +57,7 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-4xl font-bold mb-4"
         >
-          Travaillons <span className="text-accent">Ensemble</span>
+          {t('contactTitle')}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -64,7 +66,7 @@ const Contact = () => {
           transition={{ delay: 0.2 }}
           className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
         >
-          Discutons de votre projet et voyons comment je peux vous aider à le concrétiser
+          {t('contactDescription')}
         </motion.p>
       </div>
 
@@ -77,10 +79,9 @@ const Contact = () => {
           className="space-y-8"
         >
           <div>
-            <h3 className="text-2xl font-bold mb-6">Prenons contact</h3>
+            <h3 className="text-2xl font-bold mb-6">{t('getInTouch')}</h3>
             <p className="text-gray-600 dark:text-gray-300 mb-8">
-              Vous avez un projet en tête ? Discutons-en ! Je suis toujours ouvert à de nouvelles opportunités
-              et collaborations intéressantes.
+              {t('getInTouchText')}
             </p>
           </div>
 
@@ -110,10 +111,9 @@ const Contact = () => {
           </div>
 
           <div className="mt-8 p-6 bg-gradient-to-br from-accent/10 to-transparent rounded-2xl">
-            <h4 className="font-bold mb-2">Disponibilité</h4>
+            <h4 className="font-bold mb-2">{t('availabilityTitle')}</h4>
             <p className="text-gray-600 dark:text-gray-300">
-              Je suis disponible pour des projets freelance et des opportunités à temps plein.
-              Réponse garantie sous 24h.
+              {t('availabilityText')}
             </p>
           </div>
         </motion.div>
@@ -132,60 +132,60 @@ const Contact = () => {
               className="text-center py-12"
             >
               <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold mb-2">Message envoyé !</h3>
+              <h3 className="text-2xl font-bold mb-2">{t('messageSent')}</h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Je vous répondrai dans les plus brefs délais.
+                {t('responseText')}
               </p>
             </motion.div>
           ) : (
             <>
-              <h3 className="text-2xl font-bold mb-6">Envoyez un message</h3>
+              <h3 className="text-2xl font-bold mb-6">{t('sendMessage')}</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block mb-2 font-medium">Nom complet *</label>
+                    <label className="block mb-2 font-medium">{t('fullName')}</label>
                     <input
                       type="text"
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
                       className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-transparent focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
-                      placeholder="Votre nom"
+                      placeholder={t('yourName')}
                     />
                   </div>
                   <div>
-                    <label className="block mb-2 font-medium">Email *</label>
+                    <label className="block mb-2 font-medium">{t('emailLabel')}</label>
                     <input
                       type="email"
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
                       className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-transparent focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
-                      placeholder="votre@email.com"
+                      placeholder={t('yourEmail')}
                     />
                   </div>
                 </div>
                 
                 <div>
-                  <label className="block mb-2 font-medium">Sujet</label>
+                  <label className="block mb-2 font-medium">{t('subject')}</label>
                   <input
                     type="text"
                     value={formData.subject}
                     onChange={(e) => setFormData({...formData, subject: e.target.value})}
                     className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-transparent focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
-                    placeholder="Sujet de votre message"
+                    placeholder={t('messageSubject')}
                   />
                 </div>
                 
                 <div>
-                  <label className="block mb-2 font-medium">Message *</label>
+                  <label className="block mb-2 font-medium">{t('message')}</label>
                   <textarea
                     required
                     rows={5}
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                     className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-transparent focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all resize-none"
-                    placeholder="Décrivez votre projet..."
+                    placeholder={t('describeProject')}
                   />
                 </div>
                 
@@ -196,7 +196,7 @@ const Contact = () => {
                   whileTap={{ scale: 0.98 }}
                 >
                   <Send className="w-5 h-5 mr-2" />
-                  Envoyer le message
+                  {t('sendMessageBtn')}
                 </motion.button>
               </form>
             </>

@@ -3,8 +3,10 @@ import { Github, Eye, Code } from 'lucide-react';
 import img1 from '../assets/projects/1.png';
 import img2 from '../assets/projects/2.png';
 import img3 from '../assets/projects/3.png';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Projects = () => {
+  const { t } = useLanguage();
 
   const projects = [
     {
@@ -45,7 +47,7 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-4xl font-bold mb-4"
         >
-          Mes <span className="text-accent">Projets</span>
+          {t('projectsTitle')}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -54,7 +56,7 @@ const Projects = () => {
           transition={{ delay: 0.2 }}
           className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
         >
-          Une sélection de mes réalisations les plus récentes
+          {t('projectsDescription')}
         </motion.p>
       </div>
 
@@ -108,7 +110,7 @@ const Projects = () => {
                   whileTap={{ scale: 0.95 }}
                 >
                   <Eye className="w-4 h-4" />
-                  Live Demo
+                  {t('liveDemo')}
                 </motion.a>
                 <motion.a
                   href={project.repoLink}
@@ -119,7 +121,7 @@ const Projects = () => {
                   whileTap={{ scale: 0.95 }}
                 >
                   <Code className="w-4 h-4" />
-                  Code
+                  {t('code')}
                 </motion.a>
               </div>
             </div>
@@ -140,7 +142,7 @@ const Projects = () => {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-8 py-3 bg-gray-100 dark:bg-gray-800 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors duration-300"
         >
-          Voir plus sur GitHub
+          {t('seeMoreOnGitHub')}
           <Github className="w-5 h-5" />
         </a>
       </motion.div>
