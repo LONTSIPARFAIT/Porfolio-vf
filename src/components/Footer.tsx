@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 import { Heart, Coffee, ArrowUp } from 'lucide-react';
-import { SiLinkedin, SiInstagram } from 'react-icons/si';
+import { SiLinkedin, SiGithub, SiInstagram } from 'react-icons/si';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    // { icon: <SiGithub />, href: 'https://github.com/LONTSIPARFAIT', label: 'GitHub' },
+    { icon: <SiGithub />, href: 'https://github.com/LONTSIPARFAIT', label: 'GitHub' },
     { icon: <SiLinkedin />, href: 'https://linkedin.com/in/lontsi-parfait', label: 'LinkedIn' },
     // { icon: <SiTwitter />, href: 'https://twitter.com/ton-username', label: 'Twitter' },
     { icon: <SiInstagram />, href: 'https://instagram.com/ton-username', label: 'Instagram' },
