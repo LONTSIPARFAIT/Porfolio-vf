@@ -135,7 +135,7 @@ const Projects = () => {
         className="text-center mt-12"
       >
         <a
-          href="https://github.com/ton-username"
+          href="https://github.com/LONTSIPARFAIT"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-8 py-3 bg-gray-100 dark:bg-gray-800 rounded-full font-semibold hover:bg-accent hover:text-white transition-colors duration-300"
