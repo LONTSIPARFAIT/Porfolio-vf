@@ -7,45 +7,45 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      role: 'Développeur Fullstack (Stage)',
-      company: 'CFPC',
-      location: 'Yaoundé, Cameroun',
-      period: 'Juin 2024 - Août 2024',
+      role: t('exp1Role'),
+      company: t('exp1Company'),
+      location: t('exp1Location'),
+      period: t('exp1Period'),
       description: [
-        'Développement d\'une plateforme d\'e-learning complète avec Laravel',
-        'Création d\'API RESTful pour la gestion des utilisateurs et des cours',
-        'Implémentation d\'un système d\'authentification sécurisé',
-        'Optimisation des performances et du SEO de l\'application'
+        t('exp1Desc1'),
+        t('exp1Desc2'),
+        t('exp1Desc3'),
+        t('exp1Desc4')
       ],
       technologies: ['Laravel', 'MySQL', 'JavaScript', 'Tailwind CSS'],
       color: 'border-l-blue-500'
     },
     {
       id: 2,
-      role: 'Développeur Web Freelance',
-      company: 'Indépendant',
-      location: 'Remote',
-      period: 'Jan 2024 - Présent',
+      role: t('exp2Role'),
+      company: t('exp2Company'),
+      location: t('exp2Location'),
+      period: t('exp2Period'),
       description: [
-        'Développement de sites web et applications sur mesure pour divers clients',
-        'Création de portfolios interactifs avec animations avancées',
-        'Optimisation de performances et scores Lighthouse',
-        'Intégration de systèmes de paiement et API tierces'
+        t('exp2Desc1'),
+        t('exp2Desc2'),
+        t('exp2Desc3'),
+        t('exp2Desc4')
       ],
       technologies: ['React', 'Next.js', 'TypeScript', 'Node.js'],
       color: 'border-l-purple-500'
     },
     {
       id: 3,
-      role: 'Développeur Mobile',
-      company: 'Projet Académique (ESCa)',
-      location: 'Yaoundé, Cameroun',
-      period: 'Sep 2023 - Mai 2024',
+      role: t('exp3Role'),
+      company: t('exp3Company'),
+      location: t('exp3Location'),
+      period: t('exp3Period'),
       description: [
-        'Développement d\'une application CRUD en C# pour la gestion de données',
-        'Recherche et prototypage d\'applications avec Flutter',
-        'Collaboration en équipe avec méthodologie Agile',
-        'Présentation du projet devant un jury professionnel'
+        t('exp3Desc1'),
+        t('exp3Desc2'),
+        t('exp3Desc3'),
+        t('exp3Desc4')
       ],
       technologies: ['C#', '.NET', 'Flutter', 'SQL Server'],
       color: 'border-l-green-500'

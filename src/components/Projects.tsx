@@ -11,8 +11,8 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'Plateforme d\'E-learning',
-      description: 'Une plateforme web permettant aux utilisateurs d\'accéder à des cours en ligne, avec gestion des utilisateurs, des cours et des quiz.',
+      title: t('proj1Title'),
+      description: t('proj1Desc'),
       technologies: ['Laravel', 'HTML', 'CSS', 'JavaScript'],
       demoLink: '#demoLink',
       repoLink: '#repoLink',
@@ -20,8 +20,8 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: 'Application CRUD',
-      description: 'Une application de gestion de données permettant de créer, lire, mettre à jour et supprimer des enregistrements.',
+      title: t('proj2Title'),
+      description: t('proj2Desc'),
       technologies: ['C#', '.NET', 'SQL'],
       demoLink: '#demoLink',
       repoLink: '#repoLink',
@@ -29,8 +29,8 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: 'Portfolio Interactif',
-      description: 'Un portfolio personnel mettant en avant mes compétences en développement web avec une interface moderne.',
+      title: t('proj3Title'),
+      description: t('proj3Desc'),
       technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
       demoLink: '#demoLink',
       repoLink: '#repoLink',
